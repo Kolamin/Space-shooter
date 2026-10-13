@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://eg4nwa2k08av"]
+[gd_scene load_steps=8 format=3 uid="uid://eg4nwa2k08av"]
 
 [ext_resource type="Texture2D" uid="uid://d0wphldvm0ycd" path="res://graphics/Backgrounds/darkPurple.png" id="1_438cb"]
 [ext_resource type="Script" uid="uid://bw6esbetmhu1" path="res://scenes/level.gd" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://oru7e4u0y528" path="res://scenes/player.tscn" id="2_dhc5k"]
-[ext_resource type="PackedScene" uid="uid://sbbtrnj420up" path="res://scenes/meteor.tscn" id="3_2e3dy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bxhp"]
 size = Vector2(20, 720)
@@ -28,36 +27,41 @@ texture = ExtResource("1_438cb")
 [node name="Player" parent="." instance=ExtResource("2_dhc5k")]
 position = Vector2(107, 114)
 
-[node name="Meteor" parent="." instance=ExtResource("3_2e3dy")]
-position = Vector2(288, 180)
-
 [node name="Borders" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
 position = Vector2(1291, 365)
 shape = SubResource("RectangleShape2D_5bxhp")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
 position = Vector2(-2, 358)
 shape = SubResource("RectangleShape2D_u4c3r")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Borders"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3"]
 position = Vector2(643, -10)
 shape = SubResource("RectangleShape2D_skuda")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Borders"]
+position = Vector2(2, 4)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4"]
 position = Vector2(637, 731)
 shape = SubResource("RectangleShape2D_0x2re")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="MeteorTimer" type="Timer" parent="."]
+wait_time = 0.25
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Meteors" type="Node2D" parent="."]
+
+[connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
