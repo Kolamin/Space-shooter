@@ -1,8 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://eg4nwa2k08av"]
+[gd_scene load_steps=15 format=3 uid="uid://eg4nwa2k08av"]
 
 [ext_resource type="Texture2D" uid="uid://d0wphldvm0ycd" path="res://graphics/Backgrounds/darkPurple.png" id="1_438cb"]
 [ext_resource type="Script" uid="uid://bw6esbetmhu1" path="res://scenes/level.gd" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://oru7e4u0y528" path="res://scenes/player.tscn" id="2_dhc5k"]
+[ext_resource type="Texture2D" uid="uid://dpgqj007gd17r" path="res://graphics/Effects/star3.png" id="3_8c41q"]
+[ext_resource type="Texture2D" uid="uid://b6kqf2xchvhdg" path="res://graphics/Static/single-0.png" id="4_olg7q"]
+[ext_resource type="Texture2D" uid="uid://5y4q65slw173" path="res://graphics/Static/single-1.png" id="5_t1rx8"]
+[ext_resource type="Texture2D" uid="uid://bph7f6u2vwx4g" path="res://graphics/Static/single-2.png" id="6_8iemx"]
+[ext_resource type="Texture2D" uid="uid://cvqs5afqct7fn" path="res://graphics/Static/single-3.png" id="7_64w2a"]
+[ext_resource type="Texture2D" uid="uid://cg61u8shjklpw" path="res://graphics/Static/single-4.png" id="8_fpun6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wc255"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8c41q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_olg7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t1rx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8iemx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_64w2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fpun6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bxhp"]
 size = Vector2(20, 720)
@@ -23,6 +55,86 @@ script = ExtResource("1_mx8sn")
 position = Vector2(644.5, 363)
 scale = Vector2(5.0586, 2.83594)
 texture = ExtResource("1_438cb")
+
+[node name="Stars" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="Stars"]
+sprite_frames = SubResource("SpriteFrames_wc255")
+autoplay = "default"
+frame = 3
+frame_progress = 0.7040031
 
 [node name="Player" parent="." instance=ExtResource("2_dhc5k")]
 position = Vector2(107, 114)
