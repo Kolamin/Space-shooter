@@ -31,6 +31,8 @@ func _on_meteor_collision():
 	get_tree().call_group('ui', 'set_health', health)
 	if health <= 0:
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	$Player.play_collision_sound()
+	
 
 func _on_player_laser(pos):
 	var laser = laser_scene.instantiate()

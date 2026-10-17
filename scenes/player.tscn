@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://oru7e4u0y528"]
+[gd_scene load_steps=7 format=3 uid="uid://oru7e4u0y528"]
 
 [ext_resource type="Script" uid="uid://f11d3l3hi0t8" path="res://scenes/player.gd" id="1_2gevd"]
 [ext_resource type="Texture2D" uid="uid://bd7lmx85pk52u" path="res://graphics/playerShip1_red.png" id="1_48plx"]
+[ext_resource type="AudioStream" uid="uid://sdblldy4xpwl" path="res://Bonus/sfx_laser2.ogg" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://ht8k1fn48i0o" path="res://Bonus/JDSherbert - Pixel Explosions SFX Pack - Flashbang (1).ogg" id="4_dqkch"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dqkch"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dqkch"]
+lifetime_randomness = 0.14
+particle_flag_disable_z = true
+orbit_velocity_min = -0.1599999
+orbit_velocity_max = 0.6400001
+gravity = Vector3(0, 98, 0)
+color = Color(1, 0.11764706, 0.07058824, 1)
+hue_variation_min = -0.64
+hue_variation_max = 0.28999996
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
@@ -19,5 +33,19 @@ position = Vector2(0, -50)
 [node name="LaserTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qhqgy")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_dqkch")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_dqkch")
+position = Vector2(0, 34)
+process_material = SubResource("ParticleProcessMaterial_dqkch")
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]

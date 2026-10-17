@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://eg4nwa2k08av"]
+[gd_scene load_steps=17 format=3 uid="uid://eg4nwa2k08av"]
 
 [ext_resource type="Texture2D" uid="uid://d0wphldvm0ycd" path="res://graphics/Backgrounds/darkPurple.png" id="1_438cb"]
 [ext_resource type="Script" uid="uid://bw6esbetmhu1" path="res://scenes/level.gd" id="1_mx8sn"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cvqs5afqct7fn" path="res://graphics/Static/single-3.png" id="7_64w2a"]
 [ext_resource type="Texture2D" uid="uid://cg61u8shjklpw" path="res://graphics/Static/single-4.png" id="8_fpun6"]
 [ext_resource type="PackedScene" uid="uid://b4s35wngbgedg" path="res://scenes/ui.tscn" id="10_olg7q"]
+[ext_resource type="AudioStream" uid="uid://bhvj22quj8poa" path="res://Bonus/Clement Panchout_ Best Party Ever _ 2019.wav" id="11_t1rx8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wc255"]
 animations = [{
@@ -175,7 +176,7 @@ position = Vector2(637, 731)
 shape = SubResource("RectangleShape2D_0x2re")
 
 [node name="MeteorTimer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.5
 autostart = true
 
 [node name="Meteors" type="Node2D" parent="."]
@@ -183,6 +184,11 @@ autostart = true
 [node name="Lasers" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("10_olg7q")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_t1rx8")
+volume_db = -13.357
+autoplay = true
 
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]

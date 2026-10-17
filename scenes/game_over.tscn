@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0ixl8tfplh0i"]
+[gd_scene load_steps=5 format=3 uid="uid://c0ixl8tfplh0i"]
 
 [ext_resource type="Script" uid="uid://ct4wqkt3rkd4d" path="res://scenes/game_over.gd" id="1_wqhvx"]
 [ext_resource type="FontFile" uid="uid://cbvghsq6uw06a" path="res://graphics/font/subatomic.tsoonami.ttf" id="1_xeevv"]
 [ext_resource type="PackedScene" uid="uid://eg4nwa2k08av" path="res://scenes/level.tscn" id="2_tbwuq"]
+[ext_resource type="AudioStream" uid="uid://w5spbfapnnnm" path="res://Bonus/Space Horror Boss Music _Clement Panchout.wav" id="4_racf3"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -67,3 +68,8 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xeevv")
 theme_override_font_sizes/font_size = 25
 text = "Press space to start again"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_racf3")
+volume_db = -20.991
+autoplay = true

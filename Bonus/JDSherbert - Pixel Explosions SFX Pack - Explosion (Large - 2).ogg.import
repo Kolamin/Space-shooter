@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxmr227dmy0ur"
+path="res://.godot/imported/JDSherbert - Pixel Explosions SFX Pack - Explosion (Large - 2).ogg-6f4d345b89dca41be57381e8957f6e3e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Bonus/JDSherbert - Pixel Explosions SFX Pack - Explosion (Large - 2).ogg"
+dest_files=["res://.godot/imported/JDSherbert - Pixel Explosions SFX Pack - Explosion (Large - 2).ogg-6f4d345b89dca41be57381e8957f6e3e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
